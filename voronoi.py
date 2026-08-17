@@ -6,6 +6,18 @@ def f(x: list[int], func) -> list[float]:
         result.append(func(i))
     return result
 
+
+
+
+def crossProduct(aVector: list[float], bVector : list[float]) -> list[float]:
+    return [
+        (aVector[1] * bVector[2]) - (aVector[2]*bVector[1]),
+        -1 * (aVector[0]*bVector[2] - aVector[2]*bVector[0]),
+        (aVector[0]*bVector[1] - aVector[1]*bVector[0])
+        ]
+
+
+
 def linspace(start: float, end: float, step: float) -> list[float]:
     stepSize : float = end/step
     tempCount: float = start
@@ -28,8 +40,8 @@ def bisector(p: list[int], q: list[int]):
 
 
 
-xpoints = [2, 6]
-ypoints = [5, 5]
+xpoints = [1, 6]
+ypoints = [5, 4]
 
 minX, maxX = min(xpoints) - 1, max(xpoints)
 minY, maxY = min(ypoints) - 1, max(ypoints)
@@ -47,7 +59,7 @@ allPoints : list[list[float]] = []
 for idx, i in enumerate(xpoints):
     allPoints.append([i, ypoints[idx]])
 
-print(allPoints)
+
 
 while (len(allPoints) > 1):
     for i in range(1, len(allPoints)):
